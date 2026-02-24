@@ -40,8 +40,13 @@ cols = st.columns(3)
 
 for index, row in filtered_df.reset_index().iterrows():
     with cols[index % 3]:
-        if os.path.exists(row["foto"]):
-            st.image(row["foto"], use_container_width=True)
+        base_path = os.path.dirname(__file__)
+        image_path = os.path.join(base_path, row["foto"])
+
+        if os.path.exists(image_path):
+            st.image(image_path, use_container_width=True)
+        else:
+            st.warning(f"Gambar tidak ditemukan: {row['foto']}")
 
         st.subheader(row["nama"])
         st.write(row["deskripsi"])
