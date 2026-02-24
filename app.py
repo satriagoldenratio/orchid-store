@@ -58,7 +58,7 @@ for index, row in filtered_df.reset_index().iterrows():
         else:
             st.error("🔴 Habis")
 
-        wa_number = "6281234567890"
+        wa_number = "6282219890741"
         message = f"Saya ingin memesan {row['nama']}"
         wa_link = f"https://wa.me/{wa_number}?text={message.replace(' ', '%20')}"
 
@@ -68,3 +68,4 @@ for index, row in filtered_df.reset_index().iterrows():
 
 st.markdown("---")
 st.caption("© 2026 Orchid Paradise Store")
+
